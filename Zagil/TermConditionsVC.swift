@@ -7,24 +7,64 @@
 //
 
 import UIKit
+import CYLTabBarController
 
 class TermConditionsVC: UIViewController {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func agreeButton(_ sender: Any) {
+        print("button pressed")
+        let mainTabBarVc = MainTabBarController(viewControllers: self.viewControllers(), tabBarItemsAttributes: self.tabBarItemsAttributesForController())
+        mainTabBarVc.selectedIndex = 2
+        mainTabBarVc.modalPresentationStyle = .fullScreen
+        self.present(mainTabBarVc, animated: true, completion: nil)
+        
     }
-    */
+    
+    
 
+    
+    func viewControllers() -> [UINavigationController]{
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let profileController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        
+        let home = UINavigationController(rootViewController: HomeViewController())
+        let connection = UINavigationController(rootViewController: ConnectionViewController())
+        let message = UINavigationController(rootViewController: MessageViewController())
+        let profile =   UINavigationController(rootViewController: profileController)
+        let viewControllers = [home, connection, message, profile]
+        
+        return viewControllers
+        
+    }
+    
+
+    func tabBarItemsAttributesForController() ->  [[String : String]] {
+        
+        let tabBarItemOne = [CYLTabBarItemTitle:"",
+                             CYLTabBarItemImage:"TBaeroplaneU",
+                             CYLTabBarItemSelectedImage:"TBaeroplaneS"]
+        
+        let tabBarItemTwo = [CYLTabBarItemTitle:"",
+                             CYLTabBarItemImage:"TBshipmentU",
+                             CYLTabBarItemSelectedImage:"TBshipmentS"]
+        
+        let tabBarItemThree = [CYLTabBarItemTitle:"",
+                               CYLTabBarItemImage:"TBbellU",
+                               CYLTabBarItemSelectedImage:"TBbellS"]
+        
+        let tabBarItemFour = [CYLTabBarItemTitle:"",
+                              CYLTabBarItemImage:"TBprofile1",
+                              CYLTabBarItemSelectedImage:"TBprofile"]
+        let tabBarItemsAttributes = [tabBarItemOne,tabBarItemTwo,tabBarItemThree,tabBarItemFour]
+        return tabBarItemsAttributes
+    }
 }

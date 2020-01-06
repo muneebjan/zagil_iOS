@@ -7,29 +7,62 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+    // MARK:- IBOUTLETS
+    
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var dobTextfield: UITextField!
+    @IBOutlet weak var addressTextfield: UITextField!
+    @IBOutlet weak var cellPhoneTextfield: UITextField!
+    @IBOutlet weak var emailTextfield: UITextField!
+    
+    // MARK:- VARIABLES
+    var imagePicker = UIImagePickerController()
+    
+    // MARK:- VIEW FUNCTIONS
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.green
+//        self.view.backgroundColor = UIColor.green
 
     }
+    override func viewWillLayoutSubviews() {
+      super.viewWillLayoutSubviews()
+        self.profileImage.layer.cornerRadius = self.profileImage.frame.height / 2.0
+    }
+    
+    // MARK:- IB ACTIONS
+    @IBAction func openGalleryButtonHandler(_ sender: Any) {
+        
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            print("Button capture")
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+            imagePicker.delegate = self
+            imagePicker.sourceType = .savedPhotosAlbum
+            imagePicker.allowsEditing = false
+
+            present(imagePicker, animated: true, completion: nil)
+        }
+        
+    }
+    @IBAction func agreeHandler(_ sender: Any) {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            self.profileImage.contentMode = .scaleAspectFill
+            self.profileImage.image = pickedImage
+        }
+     
+        dismiss(animated: true, completion: nil)
     }
-    */
 
 }

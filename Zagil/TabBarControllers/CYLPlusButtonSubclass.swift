@@ -1,9 +1,4 @@
-//
-//  CYLPlusButtonSubclass.swift
-//
-//  v1.16.0 Created by 微博@iOS程序犭袁 ( http://weibo.com/luohanchenyilong/ ) on 10/20/15.
-//  Copyright © 2018 https://github.com/ChenYilong . All rights reserved.
-//
+
 
 import UIKit
 import CYLTabBarController
@@ -13,15 +8,15 @@ class CYLPlusButtonSubclass: CYLPlusButton,CYLPlusButtonSubclassing {
     
     static func plusButton() -> Any! {
         let button = CYLPlusButtonSubclass()
-        button.setImage(UIImage(named: "post_normal"), for: .normal)
+        button.setImage(UIImage(named: "TBhome"), for: .normal)
+        
         button.titleLabel?.textAlignment = .center
-
         button.titleLabel?.font = UIFont.systemFont(ofSize: 10)
         
-        button.setTitle("Hellow", for: .normal)
+        button.setTitle("", for: .normal)
         button.setTitleColor(UIColor.gray, for: .normal)
         
-        button.setTitle("hell", for: .selected)
+        button.setTitle("", for: .selected)
         button.setTitleColor(UIColor.blue, for: .selected)
         
         button.adjustsImageWhenHighlighted = false
@@ -39,16 +34,17 @@ class CYLPlusButtonSubclass: CYLPlusButton,CYLPlusButtonSubclassing {
     }
     
     static func multiplier(ofTabBarHeight tabBarHeight: CGFloat) -> CGFloat {
-        return 0.2
+        return 0.5
     }
    
     static func constantOfPlusButtonCenterYOffset(forTabBarHeight tabBarHeight: CGFloat) -> CGFloat {
-        return -10
+        return -13
     }
     
     static func plusChildViewController() -> UIViewController! {
-        let vc = PublishViewController()
-        let nav = UINavigationController(rootViewController: vc)
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let dashboardvc = storyBoard.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
+        let nav = UINavigationController(rootViewController: dashboardvc)
         return nav
         
     }
@@ -62,8 +58,8 @@ class CYLPlusButtonSubclass: CYLPlusButton,CYLPlusButtonSubclassing {
         super.layoutSubviews()
         
         // tabbar UI layout setup
-        let imageViewEdgeWidth:CGFloat  = self.bounds.size.width * 0.7
-        let imageViewEdgeHeight:CGFloat = imageViewEdgeWidth * 0.9
+        let imageViewEdgeWidth:CGFloat  = self.bounds.size.width * 0.9
+        let imageViewEdgeHeight:CGFloat = imageViewEdgeWidth * 0.95
         
         let centerOfView    = self.bounds.size.width * 0.5
         let labelLineHeight = self.titleLabel!.font.lineHeight
@@ -75,7 +71,7 @@ class CYLPlusButtonSubclass: CYLPlusButton,CYLPlusButtonSubclassing {
         //imageView position layout
         self.imageView!.bounds = CGRect(x:0, y:0, width:imageViewEdgeWidth, height:imageViewEdgeHeight)
         self.imageView!.center = CGPoint(x:centerOfView, y:centerOfImageView)
-        self.imageView?.backgroundColor = .blue
+//        self.imageView?.backgroundColor = .blue
         
         //title position layout
         self.titleLabel!.bounds = CGRect(x:0, y:0, width:self.bounds.size.width,height:labelLineHeight)

@@ -6,25 +6,53 @@
 //  Copyright © 2020 Apple. All rights reserved.
 //
 
+
 import UIKit
 
 class firstViewController: UIViewController {
 
+    @IBOutlet weak var createAccountBtn: UIButton!
+    @IBOutlet weak var signInButton: UIButton!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        signInButton.layer.borderWidth = 1;
+        signInButton.layer.cornerRadius=22;
+        signInButton.layer.borderColor = UIColor(red: 70/255, green: 182/255, blue: 173/255, alpha: 1).cgColor
+        
+        
+        
+        
+    }
+
+    @IBAction func createAccountHandler(_ sender: Any) {
+        
+        print("create account pressed")
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyBoard.instantiateViewController(withIdentifier: "signUpViewController") as! signUpViewController
+        controller.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(controller, animated: true)
+
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func signInHandler(_ sender: Any) {
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyBoard.instantiateViewController(withIdentifier: "signInViewController") as! signInViewController
+        controller.modalPresentationStyle = .fullScreen
+        self.navigationController?.pushViewController(controller, animated: true)
+        
     }
-    */
-
+    
+    
+    
 }
+

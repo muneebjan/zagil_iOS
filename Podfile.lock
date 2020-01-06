@@ -1,0 +1,26 @@
+PODS:
+  - Alamofire (4.9.1)
+  - CYLTabBarController (1.28.5):
+    - CYLTabBarController/Core (= 1.28.5)
+  - CYLTabBarController/Core (1.28.5)
+  - MBProgressHUD (1.1.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - CYLTabBarController
+  - MBProgressHUD
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - CYLTabBarController
+    - MBProgressHUD
+
+SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  CYLTabBarController: edd9fecba9afa3f2e9e44ed50ca6dde69941f25f
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+
+PODFILE CHECKSUM: c2656012ea6ec8e064f60401f78badde1f614dd0
+
+COCOAPODS: 1.8.4

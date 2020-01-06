@@ -3,27 +3,69 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180C2F2723C3B71700591A8A /* AppUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C2F2523C3B71700591A8A /* AppUtil.swift */; };
+		180C2F2823C3B71700591A8A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C2F2623C3B71700591A8A /* APIManager.swift */; };
+		1840C80623C1FDF0004BA0DB /* signInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840C80523C1FDF0004BA0DB /* signInViewController.swift */; };
+		1840C80923C20282004BA0DB /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840C80823C20282004BA0DB /* ToastView.swift */; };
+		1855942D23B767A3008012BE /* ooredoo-Regular_gdi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1855942C23B767A3008012BE /* ooredoo-Regular_gdi.ttf */; };
+		1855942F23B767AC008012BE /* ooredoo-Bold_gdi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1855942E23B767AC008012BE /* ooredoo-Bold_gdi.ttf */; };
+		1855943223B7790C008012BE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855943123B7790C008012BE /* SettingsViewController.swift */; };
 		1897137D23B4CF16003320F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897137C23B4CF16003320F8 /* AppDelegate.swift */; };
-		1897137F23B4CF16003320F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897137E23B4CF16003320F8 /* SceneDelegate.swift */; };
-		1897138123B4CF16003320F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897138023B4CF16003320F8 /* ViewController.swift */; };
 		1897138423B4CF16003320F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1897138223B4CF16003320F8 /* Main.storyboard */; };
 		1897138623B4CF1A003320F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1897138523B4CF1A003320F8 /* Assets.xcassets */; };
 		1897138923B4CF1A003320F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1897138723B4CF1A003320F8 /* LaunchScreen.storyboard */; };
+		18B0634923B62134001B6F29 /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0634223B62133001B6F29 /* ConnectionViewController.swift */; };
+		18B0634A23B62134001B6F29 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0634323B62134001B6F29 /* MainTabBarController.swift */; };
+		18B0634B23B62134001B6F29 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0634423B62134001B6F29 /* ProfileViewController.swift */; };
+		18B0634C23B62134001B6F29 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0634523B62134001B6F29 /* HomeViewController.swift */; };
+		18B0634D23B62134001B6F29 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0634623B62134001B6F29 /* DashboardViewController.swift */; };
+		18B0634E23B62134001B6F29 /* CYLPlusButtonSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0634723B62134001B6F29 /* CYLPlusButtonSubclass.swift */; };
+		18B0634F23B62134001B6F29 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0634823B62134001B6F29 /* MessageViewController.swift */; };
+		18B0635323B626E2001B6F29 /* TermConditionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0635223B626E2001B6F29 /* TermConditionsVC.swift */; };
+		18D80C2223C1F63E00DE458D /* firstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D80C2123C1F63E00DE458D /* firstViewController.swift */; };
+		18D80C2423C1F81300DE458D /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D80C2323C1F81300DE458D /* signUpViewController.swift */; };
+		18EE9B0223B8C52000564E16 /* Dshipment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EE9B0123B8C52000564E16 /* Dshipment.storyboard */; };
+		18EE9B0423B8C54300564E16 /* Dtrips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EE9B0323B8C54300564E16 /* Dtrips.storyboard */; };
+		18EE9B0623B8C55500564E16 /* Dactivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EE9B0523B8C55500564E16 /* Dactivity.storyboard */; };
+		18EE9B0823B8C56100564E16 /* Dsetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EE9B0723B8C56100564E16 /* Dsetting.storyboard */; };
+		B8DF0C466CECE5A55F550D52 /* Pods_Zagil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C143DE91B3522871207F93 /* Pods_Zagil.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		180C2F2523C3B71700591A8A /* AppUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUtil.swift; sourceTree = "<group>"; };
+		180C2F2623C3B71700591A8A /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		1840C80523C1FDF0004BA0DB /* signInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInViewController.swift; sourceTree = "<group>"; };
+		1840C80823C20282004BA0DB /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		1855942C23B767A3008012BE /* ooredoo-Regular_gdi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ooredoo-Regular_gdi.ttf"; sourceTree = "<group>"; };
+		1855942E23B767AC008012BE /* ooredoo-Bold_gdi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ooredoo-Bold_gdi.ttf"; sourceTree = "<group>"; };
+		1855943123B7790C008012BE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1897137923B4CF16003320F8 /* Zagil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zagil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1897137C23B4CF16003320F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1897137E23B4CF16003320F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1897138023B4CF16003320F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1897138323B4CF16003320F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1897138523B4CF1A003320F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1897138823B4CF1A003320F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1897138A23B4CF1A003320F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18B0634223B62133001B6F29 /* ConnectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
+		18B0634323B62134001B6F29 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		18B0634423B62134001B6F29 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		18B0634523B62134001B6F29 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		18B0634623B62134001B6F29 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		18B0634723B62134001B6F29 /* CYLPlusButtonSubclass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYLPlusButtonSubclass.swift; sourceTree = "<group>"; };
+		18B0634823B62134001B6F29 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		18B0635223B626E2001B6F29 /* TermConditionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermConditionsVC.swift; sourceTree = "<group>"; };
+		18D80C2123C1F63E00DE458D /* firstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = firstViewController.swift; sourceTree = "<group>"; };
+		18D80C2323C1F81300DE458D /* signUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
+		18EE9B0123B8C52000564E16 /* Dshipment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dshipment.storyboard; sourceTree = "<group>"; };
+		18EE9B0323B8C54300564E16 /* Dtrips.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dtrips.storyboard; sourceTree = "<group>"; };
+		18EE9B0523B8C55500564E16 /* Dactivity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dactivity.storyboard; sourceTree = "<group>"; };
+		18EE9B0723B8C56100564E16 /* Dsetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dsetting.storyboard; sourceTree = "<group>"; };
+		39E003688AD5EB0BFC0E46EF /* Pods-Zagil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zagil.release.xcconfig"; path = "Target Support Files/Pods-Zagil/Pods-Zagil.release.xcconfig"; sourceTree = "<group>"; };
+		75C143DE91B3522871207F93 /* Pods_Zagil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zagil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E91BC30BDA6615AE73032539 /* Pods-Zagil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zagil.debug.xcconfig"; path = "Target Support Files/Pods-Zagil/Pods-Zagil.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +73,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8DF0C466CECE5A55F550D52 /* Pods_Zagil.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1840C80723C2025C004BA0DB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1840C80823C20282004BA0DB /* ToastView.swift */,
+				180C2F2523C3B71700591A8A /* AppUtil.swift */,
+				180C2F2623C3B71700591A8A /* APIManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		1855942B23B76797008012BE /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				1855942E23B767AC008012BE /* ooredoo-Bold_gdi.ttf */,
+				1855942C23B767A3008012BE /* ooredoo-Regular_gdi.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		1855943023B778EF008012BE /* DashBoardControllers */ = {
+			isa = PBXGroup;
+			children = (
+				18EE9AFF23B8C2EB00564E16 /* DashBoardActivity */,
+				18EE9AFE23B8C2E100564E16 /* DashBoardTrips */,
+				18EE9AFD23B8C2CE00564E16 /* DashBoardShipments */,
+				18EE9AFC23B8C28F00564E16 /* DashBoardSettings */,
+			);
+			path = DashBoardControllers;
+			sourceTree = "<group>";
+		};
 		1897137023B4CF16003320F8 = {
 			isa = PBXGroup;
 			children = (
 				1897137B23B4CF16003320F8 /* Zagil */,
 				1897137A23B4CF16003320F8 /* Products */,
+				AEAD30B9268B71A08AEA6BA9 /* Pods */,
+				3BE9007489A3E4D171E8E22E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +131,101 @@
 		1897137B23B4CF16003320F8 /* Zagil */ = {
 			isa = PBXGroup;
 			children = (
+				1840C80723C2025C004BA0DB /* Utilities */,
+				18D80C2023C1F61000DE458D /* SignUP&SignINcontroller */,
+				1855942B23B76797008012BE /* fonts */,
+				18B0634123B6208C001B6F29 /* TabBarControllers */,
+				1855943023B778EF008012BE /* DashBoardControllers */,
 				1897137C23B4CF16003320F8 /* AppDelegate.swift */,
-				1897137E23B4CF16003320F8 /* SceneDelegate.swift */,
-				1897138023B4CF16003320F8 /* ViewController.swift */,
+				18B0635223B626E2001B6F29 /* TermConditionsVC.swift */,
 				1897138223B4CF16003320F8 /* Main.storyboard */,
+				18EE9B0023B8C4FC00564E16 /* StoryBoards */,
 				1897138523B4CF1A003320F8 /* Assets.xcassets */,
 				1897138723B4CF1A003320F8 /* LaunchScreen.storyboard */,
 				1897138A23B4CF1A003320F8 /* Info.plist */,
 			);
 			path = Zagil;
+			sourceTree = "<group>";
+		};
+		18B0634123B6208C001B6F29 /* TabBarControllers */ = {
+			isa = PBXGroup;
+			children = (
+				18B0634623B62134001B6F29 /* DashboardViewController.swift */,
+				18B0634223B62133001B6F29 /* ConnectionViewController.swift */,
+				18B0634823B62134001B6F29 /* MessageViewController.swift */,
+				18B0634423B62134001B6F29 /* ProfileViewController.swift */,
+				18B0634523B62134001B6F29 /* HomeViewController.swift */,
+				18B0634323B62134001B6F29 /* MainTabBarController.swift */,
+				18B0634723B62134001B6F29 /* CYLPlusButtonSubclass.swift */,
+			);
+			path = TabBarControllers;
+			sourceTree = "<group>";
+		};
+		18D80C2023C1F61000DE458D /* SignUP&SignINcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				18D80C2123C1F63E00DE458D /* firstViewController.swift */,
+				18D80C2323C1F81300DE458D /* signUpViewController.swift */,
+				1840C80523C1FDF0004BA0DB /* signInViewController.swift */,
+			);
+			path = "SignUP&SignINcontroller";
+			sourceTree = "<group>";
+		};
+		18EE9AFC23B8C28F00564E16 /* DashBoardSettings */ = {
+			isa = PBXGroup;
+			children = (
+				1855943123B7790C008012BE /* SettingsViewController.swift */,
+			);
+			path = DashBoardSettings;
+			sourceTree = "<group>";
+		};
+		18EE9AFD23B8C2CE00564E16 /* DashBoardShipments */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DashBoardShipments;
+			sourceTree = "<group>";
+		};
+		18EE9AFE23B8C2E100564E16 /* DashBoardTrips */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DashBoardTrips;
+			sourceTree = "<group>";
+		};
+		18EE9AFF23B8C2EB00564E16 /* DashBoardActivity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DashBoardActivity;
+			sourceTree = "<group>";
+		};
+		18EE9B0023B8C4FC00564E16 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				18EE9B0123B8C52000564E16 /* Dshipment.storyboard */,
+				18EE9B0323B8C54300564E16 /* Dtrips.storyboard */,
+				18EE9B0523B8C55500564E16 /* Dactivity.storyboard */,
+				18EE9B0723B8C56100564E16 /* Dsetting.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		3BE9007489A3E4D171E8E22E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75C143DE91B3522871207F93 /* Pods_Zagil.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AEAD30B9268B71A08AEA6BA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E91BC30BDA6615AE73032539 /* Pods-Zagil.debug.xcconfig */,
+				39E003688AD5EB0BFC0E46EF /* Pods-Zagil.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +235,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1897138D23B4CF1A003320F8 /* Build configuration list for PBXNativeTarget "Zagil" */;
 			buildPhases = (
+				C83264C601C9D10D4A114D37 /* [CP] Check Pods Manifest.lock */,
 				1897137523B4CF16003320F8 /* Sources */,
 				1897137623B4CF16003320F8 /* Frameworks */,
 				1897137723B4CF16003320F8 /* Resources */,
+				ABB13190AC90551AB103577D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -99,6 +262,7 @@
 				TargetAttributes = {
 					1897137823B4CF16003320F8 = {
 						CreatedOnToolsVersion = 11.1;
+						LastSwiftMigration = 1110;
 					};
 				};
 			};
@@ -125,22 +289,83 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1855942D23B767A3008012BE /* ooredoo-Regular_gdi.ttf in Resources */,
 				1897138923B4CF1A003320F8 /* LaunchScreen.storyboard in Resources */,
 				1897138623B4CF1A003320F8 /* Assets.xcassets in Resources */,
+				18EE9B0423B8C54300564E16 /* Dtrips.storyboard in Resources */,
+				18EE9B0623B8C55500564E16 /* Dactivity.storyboard in Resources */,
+				18EE9B0223B8C52000564E16 /* Dshipment.storyboard in Resources */,
+				18EE9B0823B8C56100564E16 /* Dsetting.storyboard in Resources */,
+				1855942F23B767AC008012BE /* ooredoo-Bold_gdi.ttf in Resources */,
 				1897138423B4CF16003320F8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		ABB13190AC90551AB103577D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zagil/Pods-Zagil-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zagil/Pods-Zagil-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zagil/Pods-Zagil-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C83264C601C9D10D4A114D37 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Zagil-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1897137523B4CF16003320F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1897138123B4CF16003320F8 /* ViewController.swift in Sources */,
+				180C2F2823C3B71700591A8A /* APIManager.swift in Sources */,
+				18B0634923B62134001B6F29 /* ConnectionViewController.swift in Sources */,
+				18D80C2223C1F63E00DE458D /* firstViewController.swift in Sources */,
+				18D80C2423C1F81300DE458D /* signUpViewController.swift in Sources */,
+				180C2F2723C3B71700591A8A /* AppUtil.swift in Sources */,
+				18B0634E23B62134001B6F29 /* CYLPlusButtonSubclass.swift in Sources */,
+				18B0634A23B62134001B6F29 /* MainTabBarController.swift in Sources */,
+				1855943223B7790C008012BE /* SettingsViewController.swift in Sources */,
+				18B0634F23B62134001B6F29 /* MessageViewController.swift in Sources */,
 				1897137D23B4CF16003320F8 /* AppDelegate.swift in Sources */,
-				1897137F23B4CF16003320F8 /* SceneDelegate.swift in Sources */,
+				1840C80923C20282004BA0DB /* ToastView.swift in Sources */,
+				18B0634D23B62134001B6F29 /* DashboardViewController.swift in Sources */,
+				18B0634B23B62134001B6F29 /* ProfileViewController.swift in Sources */,
+				18B0635323B626E2001B6F29 /* TermConditionsVC.swift in Sources */,
+				18B0634C23B62134001B6F29 /* HomeViewController.swift in Sources */,
+				1840C80623C1FDF0004BA0DB /* signInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,17 +507,22 @@
 		};
 		1897138E23B4CF1A003320F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E91BC30BDA6615AE73032539 /* Pods-Zagil.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VP36T5UB3S;
 				INFOPLIST_FILE = Zagil/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mvp.Zagil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Zagil/Utilities/Zagil-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -300,17 +530,21 @@
 		};
 		1897138F23B4CF1A003320F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39E003688AD5EB0BFC0E46EF /* Pods-Zagil.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VP36T5UB3S;
 				INFOPLIST_FILE = Zagil/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mvp.Zagil;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Zagil/Utilities/Zagil-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
