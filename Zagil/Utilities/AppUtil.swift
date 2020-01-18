@@ -12,14 +12,16 @@ import Alamofire
 
 class AppUtil: NSObject {
     
+    
     class func isInternetConnected() -> Bool
     {
         return NetworkReachabilityManager()!.isReachable
     }
 
+    
     class func getBaseUrl() -> String
     {
-        return "ec2-18-219-185-175.us-east-2.compute.amazonaws.com:3000"
+        return "http://ec2-18-219-185-175.us-east-2.compute.amazonaws.com:3000"
         
     }
     
@@ -30,6 +32,11 @@ class AppUtil: NSObject {
         return emailPred.evaluate(with: email)
     }
     
+    class func getBlueCustomColor() -> UIColor
+    {
+        let color = UIColor(red: 42/255, green: 180/255, blue: 202/255, alpha: 1)
+        return color
+    }
     
 //    class func getImageBaseUrl() -> String
 //    {

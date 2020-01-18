@@ -43,7 +43,7 @@ class CYLPlusButtonSubclass: CYLPlusButton,CYLPlusButtonSubclassing {
     
     static func plusChildViewController() -> UIViewController! {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let dashboardvc = storyBoard.instantiateViewController(withIdentifier: "DashboardViewController") as! DashboardViewController
+        let dashboardvc = storyBoard.instantiateViewController(withIdentifier: "dashboardVC") as! dashboardVC
         let nav = UINavigationController(rootViewController: dashboardvc)
         return nav
         

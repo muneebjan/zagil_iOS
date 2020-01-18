@@ -1,55 +1,41 @@
-////
-////  AppDelegate.swift
-////  Zagil
-////
-////  Created by Apple on 26/12/2019.
-////  Copyright © 2019 Apple. All rights reserved.
-////
-//
-//import UIKit
-//import CYLTabBarController
-//
-//@UIApplicationMain
-//class AppDelegate: UIResponder, UIApplicationDelegate {
-//
-//
-//
-//    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        // Override point for customization after application launch.
-//        CYLPlusButtonSubclass.register()
-//        return true
-//    }
-//
-//    // MARK: UISceneSession Lifecycle
-//
-//    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-//        // Called when a new scene session is being created.
-//        // Use this method to select a configuration to create the new scene with.
-//        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-//    }
-//
-//    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-//        // Called when the user discards a scene session.
-//        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-//        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-//    }
-//
-//
-//}
-
 //
 //  AppDelegate.swift
+//  Zagil
+//
+//  Created by Apple on 26/12/2019.
+//  Copyright © 2019 Apple. All rights reserved.
+
 
 
 import UIKit
+import GoogleSignIn
+import FBSDKCoreKit
 import CYLTabBarController
+import GoogleMaps
+import GooglePlaces
+import IQKeyboardManagerSwift
+import Alamofire
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate, GIDSignInDelegate {
 
     var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
        
+        // keyboard
+        IQKeyboardManager.shared.enable = true
+        
+        // google maps api key
+        GMSServices.provideAPIKey("AIzaSyDY3haY0ul6LaNBKSkBKqKbqABECmXJE5w")
+        
+        
+        // Initialize sign-in
+        GIDSignIn.sharedInstance().clientID = "291118539154-vtlq9h1rpa96hj2b938v89sras9me3nh.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
+        
+        // facebook
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
         CYLPlusButtonSubclass.register()
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -66,4 +52,66 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UITabBarControllerDelegate
         return true
     }
 
+    
+    // [START openurl]
+    func application(_ application: UIApplication,
+                     open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+      return GIDSignIn.sharedInstance().handle(url)
+    }
+    // [END openurl]
+    // [START openurl_new]
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+      return ApplicationDelegate.shared.application(app, open: url, options: options)
+    }
+    
+//    @available(iOS 9.0, *)
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]) -> Bool {
+//      return GIDSignIn.sharedInstance().handle(url)
+//    }
+    
+    
+    // [END openurl_new]
+    // [START signin_handler]
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
+              withError error: Error!) {
+      if let error = error {
+        if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+          print("The user has not signed in before or they have since signed out.")
+        } else {
+          print("\(error.localizedDescription)")
+        }
+        // [START_EXCLUDE silent]
+        NotificationCenter.default.post(
+          name: Notification.Name(rawValue: "ToggleAuthUINotification"), object: nil, userInfo: nil)
+        // [END_EXCLUDE]
+        return
+      }
+      // Perform any operations on signed in user here.
+      let userId = user.userID                  // For client-side use only!
+      let idToken = user.authentication.idToken // Safe to send to the server
+      let fullName = user.profile.name
+      let givenName = user.profile.givenName
+      let familyName = user.profile.familyName
+      let email = user.profile.email
+      // [START_EXCLUDE]
+      NotificationCenter.default.post(
+        name: Notification.Name(rawValue: "ToggleAuthUINotification"),
+        object: nil,
+        userInfo: ["statusText": "Signed in user:\n\(fullName!)"])
+      // [END_EXCLUDE]
+    }
+    // [END signin_handler]
+    // [START disconnect_handler]
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!,
+              withError error: Error!) {
+      // Perform any operations when the user disconnects from app here.
+      // [START_EXCLUDE]
+      NotificationCenter.default.post(
+        name: Notification.Name(rawValue: "ToggleAuthUINotification"),
+        object: nil,
+        userInfo: ["statusText": "User has disconnected."])
+      // [END_EXCLUDE]
+    }
+    
 }

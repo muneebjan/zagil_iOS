@@ -113,7 +113,7 @@ extension signUpViewController {
                     let mainDict = array[0] as! NSDictionary
                     let count = mainDict.value(forKey: "count") as! Int
                     
-                    if(count == 1){
+                    if(count < 1){
                         print("entered email already exists")
                     }else{
                         print("email not exists you may sign up")
@@ -168,7 +168,11 @@ extension signUpViewController {
                     MBProgressHUD.hide(for: self.view, animated: true)
                     let array = mainResponse as! NSArray
                     let mainDict = array[0] as! NSDictionary
-//                    let id = mainDict.value(forKey: "id") as! Int
+//                    let userid = mainDict.value(forKey: "id") as! Int
+            
+                    
+                    ToastView.shared.short(self.view, txt_msg: "Sign Up Successfull")
+                    self.navigationController?.popToRootViewController(animated: true)
                     
                 }
                 else if (mainResponse is [AnyHashable : Any])

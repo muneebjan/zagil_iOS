@@ -9,8 +9,12 @@
 /* Begin PBXBuildFile section */
 		180C2F2723C3B71700591A8A /* AppUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C2F2523C3B71700591A8A /* AppUtil.swift */; };
 		180C2F2823C3B71700591A8A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180C2F2623C3B71700591A8A /* APIManager.swift */; };
+		18193DDD23D08CD4003CDA7F /* dashboardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18193DDC23D08CD4003CDA7F /* dashboardVC.swift */; };
 		1840C80623C1FDF0004BA0DB /* signInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840C80523C1FDF0004BA0DB /* signInViewController.swift */; };
 		1840C80923C20282004BA0DB /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840C80823C20282004BA0DB /* ToastView.swift */; };
+		1841028E23C4F5B200D19755 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1841028D23C4F5B200D19755 /* credentials.plist */; };
+		1853761923D09FCB001691A6 /* tripFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853761823D09FCB001691A6 /* tripFeedVC.swift */; };
+		1853761B23D0B409001691A6 /* mapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853761A23D0B409001691A6 /* mapsViewController.swift */; };
 		1855942D23B767A3008012BE /* ooredoo-Regular_gdi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1855942C23B767A3008012BE /* ooredoo-Regular_gdi.ttf */; };
 		1855942F23B767AC008012BE /* ooredoo-Bold_gdi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1855942E23B767AC008012BE /* ooredoo-Bold_gdi.ttf */; };
 		1855943223B7790C008012BE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855943123B7790C008012BE /* SettingsViewController.swift */; };
@@ -18,11 +22,15 @@
 		1897138423B4CF16003320F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1897138223B4CF16003320F8 /* Main.storyboard */; };
 		1897138623B4CF1A003320F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1897138523B4CF1A003320F8 /* Assets.xcassets */; };
 		1897138923B4CF1A003320F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1897138723B4CF1A003320F8 /* LaunchScreen.storyboard */; };
-		18B0634923B62134001B6F29 /* ConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0634223B62133001B6F29 /* ConnectionViewController.swift */; };
+		18A8274A23D1EA3400F28BAA /* TextFieldDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8274923D1EA3400F28BAA /* TextFieldDesignable.swift */; };
+		18A8274C23D1F3A800F28BAA /* TextViewDesignables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8274B23D1F3A800F28BAA /* TextViewDesignables.swift */; };
+		18A8274E23D1F66A00F28BAA /* newTripVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8274D23D1F66A00F28BAA /* newTripVC.swift */; };
+		18A8275023D200C800F28BAA /* calendarPopOverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8274F23D200C800F28BAA /* calendarPopOverVC.swift */; };
+		18A8275423D21F5800F28BAA /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8275323D21F5800F28BAA /* UserModel.swift */; };
 		18B0634A23B62134001B6F29 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0634323B62134001B6F29 /* MainTabBarController.swift */; };
 		18B0634B23B62134001B6F29 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0634423B62134001B6F29 /* ProfileViewController.swift */; };
 		18B0634C23B62134001B6F29 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0634523B62134001B6F29 /* HomeViewController.swift */; };
-		18B0634D23B62134001B6F29 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0634623B62134001B6F29 /* DashboardViewController.swift */; };
+		18B0634D23B62134001B6F29 /* shipmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0634623B62134001B6F29 /* shipmentViewController.swift */; };
 		18B0634E23B62134001B6F29 /* CYLPlusButtonSubclass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0634723B62134001B6F29 /* CYLPlusButtonSubclass.swift */; };
 		18B0634F23B62134001B6F29 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0634823B62134001B6F29 /* MessageViewController.swift */; };
 		18B0635323B626E2001B6F29 /* TermConditionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18B0635223B626E2001B6F29 /* TermConditionsVC.swift */; };
@@ -38,8 +46,12 @@
 /* Begin PBXFileReference section */
 		180C2F2523C3B71700591A8A /* AppUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUtil.swift; sourceTree = "<group>"; };
 		180C2F2623C3B71700591A8A /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		18193DDC23D08CD4003CDA7F /* dashboardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dashboardVC.swift; sourceTree = "<group>"; };
 		1840C80523C1FDF0004BA0DB /* signInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInViewController.swift; sourceTree = "<group>"; };
 		1840C80823C20282004BA0DB /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		1841028D23C4F5B200D19755 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		1853761823D09FCB001691A6 /* tripFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripFeedVC.swift; sourceTree = "<group>"; };
+		1853761A23D0B409001691A6 /* mapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapsViewController.swift; sourceTree = "<group>"; };
 		1855942C23B767A3008012BE /* ooredoo-Regular_gdi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ooredoo-Regular_gdi.ttf"; sourceTree = "<group>"; };
 		1855942E23B767AC008012BE /* ooredoo-Bold_gdi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ooredoo-Bold_gdi.ttf"; sourceTree = "<group>"; };
 		1855943123B7790C008012BE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -49,11 +61,15 @@
 		1897138523B4CF1A003320F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1897138823B4CF1A003320F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1897138A23B4CF1A003320F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18B0634223B62133001B6F29 /* ConnectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionViewController.swift; sourceTree = "<group>"; };
+		18A8274923D1EA3400F28BAA /* TextFieldDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDesignable.swift; sourceTree = "<group>"; };
+		18A8274B23D1F3A800F28BAA /* TextViewDesignables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewDesignables.swift; sourceTree = "<group>"; };
+		18A8274D23D1F66A00F28BAA /* newTripVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTripVC.swift; sourceTree = "<group>"; };
+		18A8274F23D200C800F28BAA /* calendarPopOverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarPopOverVC.swift; sourceTree = "<group>"; };
+		18A8275323D21F5800F28BAA /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		18B0634323B62134001B6F29 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		18B0634423B62134001B6F29 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		18B0634523B62134001B6F29 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		18B0634623B62134001B6F29 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		18B0634623B62134001B6F29 /* shipmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shipmentViewController.swift; sourceTree = "<group>"; };
 		18B0634723B62134001B6F29 /* CYLPlusButtonSubclass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CYLPlusButtonSubclass.swift; sourceTree = "<group>"; };
 		18B0634823B62134001B6F29 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		18B0635223B626E2001B6F29 /* TermConditionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermConditionsVC.swift; sourceTree = "<group>"; };
@@ -86,8 +102,21 @@
 				1840C80823C20282004BA0DB /* ToastView.swift */,
 				180C2F2523C3B71700591A8A /* AppUtil.swift */,
 				180C2F2623C3B71700591A8A /* APIManager.swift */,
+				18A8274923D1EA3400F28BAA /* TextFieldDesignable.swift */,
+				18A8274B23D1F3A800F28BAA /* TextViewDesignables.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		1853761723D09FA6001691A6 /* DashboardFurtherController */ = {
+			isa = PBXGroup;
+			children = (
+				1853761823D09FCB001691A6 /* tripFeedVC.swift */,
+				1853761A23D0B409001691A6 /* mapsViewController.swift */,
+				18A8274D23D1F66A00F28BAA /* newTripVC.swift */,
+				18A8274F23D200C800F28BAA /* calendarPopOverVC.swift */,
+			);
+			path = DashboardFurtherController;
 			sourceTree = "<group>";
 		};
 		1855942B23B76797008012BE /* fonts */ = {
@@ -99,15 +128,15 @@
 			path = fonts;
 			sourceTree = "<group>";
 		};
-		1855943023B778EF008012BE /* DashBoardControllers */ = {
+		1855943023B778EF008012BE /* ShipmentControllers */ = {
 			isa = PBXGroup;
 			children = (
-				18EE9AFF23B8C2EB00564E16 /* DashBoardActivity */,
-				18EE9AFE23B8C2E100564E16 /* DashBoardTrips */,
-				18EE9AFD23B8C2CE00564E16 /* DashBoardShipments */,
-				18EE9AFC23B8C28F00564E16 /* DashBoardSettings */,
+				18EE9AFF23B8C2EB00564E16 /* ShipmentActivity */,
+				18EE9AFE23B8C2E100564E16 /* ShipmentTrips */,
+				18EE9AFD23B8C2CE00564E16 /* Shipments */,
+				18EE9AFC23B8C28F00564E16 /* ShipmentSettings */,
 			);
-			path = DashBoardControllers;
+			path = ShipmentControllers;
 			sourceTree = "<group>";
 		};
 		1897137023B4CF16003320F8 = {
@@ -131,11 +160,13 @@
 		1897137B23B4CF16003320F8 /* Zagil */ = {
 			isa = PBXGroup;
 			children = (
+				18A8275123D21F0100F28BAA /* Model */,
 				1840C80723C2025C004BA0DB /* Utilities */,
 				18D80C2023C1F61000DE458D /* SignUP&SignINcontroller */,
 				1855942B23B76797008012BE /* fonts */,
 				18B0634123B6208C001B6F29 /* TabBarControllers */,
-				1855943023B778EF008012BE /* DashBoardControllers */,
+				1855943023B778EF008012BE /* ShipmentControllers */,
+				1853761723D09FA6001691A6 /* DashboardFurtherController */,
 				1897137C23B4CF16003320F8 /* AppDelegate.swift */,
 				18B0635223B626E2001B6F29 /* TermConditionsVC.swift */,
 				1897138223B4CF16003320F8 /* Main.storyboard */,
@@ -143,20 +174,37 @@
 				1897138523B4CF1A003320F8 /* Assets.xcassets */,
 				1897138723B4CF1A003320F8 /* LaunchScreen.storyboard */,
 				1897138A23B4CF1A003320F8 /* Info.plist */,
+				1841028D23C4F5B200D19755 /* credentials.plist */,
 			);
 			path = Zagil;
+			sourceTree = "<group>";
+		};
+		18A8275123D21F0100F28BAA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18A8275223D21F0F00F28BAA /* UserModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18A8275223D21F0F00F28BAA /* UserModel */ = {
+			isa = PBXGroup;
+			children = (
+				18A8275323D21F5800F28BAA /* UserModel.swift */,
+			);
+			path = UserModel;
 			sourceTree = "<group>";
 		};
 		18B0634123B6208C001B6F29 /* TabBarControllers */ = {
 			isa = PBXGroup;
 			children = (
-				18B0634623B62134001B6F29 /* DashboardViewController.swift */,
-				18B0634223B62133001B6F29 /* ConnectionViewController.swift */,
+				18B0634623B62134001B6F29 /* shipmentViewController.swift */,
 				18B0634823B62134001B6F29 /* MessageViewController.swift */,
 				18B0634423B62134001B6F29 /* ProfileViewController.swift */,
 				18B0634523B62134001B6F29 /* HomeViewController.swift */,
 				18B0634323B62134001B6F29 /* MainTabBarController.swift */,
 				18B0634723B62134001B6F29 /* CYLPlusButtonSubclass.swift */,
+				18193DDC23D08CD4003CDA7F /* dashboardVC.swift */,
 			);
 			path = TabBarControllers;
 			sourceTree = "<group>";
@@ -171,33 +219,33 @@
 			path = "SignUP&SignINcontroller";
 			sourceTree = "<group>";
 		};
-		18EE9AFC23B8C28F00564E16 /* DashBoardSettings */ = {
+		18EE9AFC23B8C28F00564E16 /* ShipmentSettings */ = {
 			isa = PBXGroup;
 			children = (
 				1855943123B7790C008012BE /* SettingsViewController.swift */,
 			);
-			path = DashBoardSettings;
+			path = ShipmentSettings;
 			sourceTree = "<group>";
 		};
-		18EE9AFD23B8C2CE00564E16 /* DashBoardShipments */ = {
+		18EE9AFD23B8C2CE00564E16 /* Shipments */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = DashBoardShipments;
+			path = Shipments;
 			sourceTree = "<group>";
 		};
-		18EE9AFE23B8C2E100564E16 /* DashBoardTrips */ = {
+		18EE9AFE23B8C2E100564E16 /* ShipmentTrips */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = DashBoardTrips;
+			path = ShipmentTrips;
 			sourceTree = "<group>";
 		};
-		18EE9AFF23B8C2EB00564E16 /* DashBoardActivity */ = {
+		18EE9AFF23B8C2EB00564E16 /* ShipmentActivity */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = DashBoardActivity;
+			path = ShipmentActivity;
 			sourceTree = "<group>";
 		};
 		18EE9B0023B8C4FC00564E16 /* StoryBoards */ = {
@@ -240,6 +288,7 @@
 				1897137623B4CF16003320F8 /* Frameworks */,
 				1897137723B4CF16003320F8 /* Resources */,
 				ABB13190AC90551AB103577D /* [CP] Embed Pods Frameworks */,
+				A3E1B07CFE61BB34D1002C3D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -296,6 +345,7 @@
 				18EE9B0623B8C55500564E16 /* Dactivity.storyboard in Resources */,
 				18EE9B0223B8C52000564E16 /* Dshipment.storyboard in Resources */,
 				18EE9B0823B8C56100564E16 /* Dsetting.storyboard in Resources */,
+				1841028E23C4F5B200D19755 /* credentials.plist in Resources */,
 				1855942F23B767AC008012BE /* ooredoo-Bold_gdi.ttf in Resources */,
 				1897138423B4CF16003320F8 /* Main.storyboard in Resources */,
 			);
@@ -304,6 +354,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		A3E1B07CFE61BB34D1002C3D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zagil/Pods-Zagil-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zagil/Pods-Zagil-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zagil/Pods-Zagil-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		ABB13190AC90551AB103577D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -351,21 +418,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				180C2F2823C3B71700591A8A /* APIManager.swift in Sources */,
-				18B0634923B62134001B6F29 /* ConnectionViewController.swift in Sources */,
 				18D80C2223C1F63E00DE458D /* firstViewController.swift in Sources */,
 				18D80C2423C1F81300DE458D /* signUpViewController.swift in Sources */,
 				180C2F2723C3B71700591A8A /* AppUtil.swift in Sources */,
+				18A8275023D200C800F28BAA /* calendarPopOverVC.swift in Sources */,
 				18B0634E23B62134001B6F29 /* CYLPlusButtonSubclass.swift in Sources */,
+				18A8274E23D1F66A00F28BAA /* newTripVC.swift in Sources */,
+				1853761B23D0B409001691A6 /* mapsViewController.swift in Sources */,
+				18A8275423D21F5800F28BAA /* UserModel.swift in Sources */,
 				18B0634A23B62134001B6F29 /* MainTabBarController.swift in Sources */,
 				1855943223B7790C008012BE /* SettingsViewController.swift in Sources */,
 				18B0634F23B62134001B6F29 /* MessageViewController.swift in Sources */,
+				18A8274A23D1EA3400F28BAA /* TextFieldDesignable.swift in Sources */,
 				1897137D23B4CF16003320F8 /* AppDelegate.swift in Sources */,
+				1853761923D09FCB001691A6 /* tripFeedVC.swift in Sources */,
 				1840C80923C20282004BA0DB /* ToastView.swift in Sources */,
-				18B0634D23B62134001B6F29 /* DashboardViewController.swift in Sources */,
+				18A8274C23D1F3A800F28BAA /* TextViewDesignables.swift in Sources */,
+				18B0634D23B62134001B6F29 /* shipmentViewController.swift in Sources */,
 				18B0634B23B62134001B6F29 /* ProfileViewController.swift in Sources */,
 				18B0635323B626E2001B6F29 /* TermConditionsVC.swift in Sources */,
 				18B0634C23B62134001B6F29 /* HomeViewController.swift in Sources */,
 				1840C80623C1FDF0004BA0DB /* signInViewController.swift in Sources */,
+				18193DDD23D08CD4003CDA7F /* dashboardVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

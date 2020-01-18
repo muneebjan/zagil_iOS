@@ -9,4 +9,11 @@ target 'Zagil' do
 pod 'CYLTabBarController'
 pod 'Alamofire'
 pod 'MBProgressHUD'
+pod 'GoogleSignIn'
+pod 'FBSDKLoginKit'
+pod 'GCCalendar'
+pod 'GoogleMaps'
+pod 'GooglePlaces'
+pod 'IQKeyboardManagerSwift'
+
 end

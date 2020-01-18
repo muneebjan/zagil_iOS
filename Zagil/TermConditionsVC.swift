@@ -12,7 +12,20 @@ import CYLTabBarController
 class TermConditionsVC: UIViewController {
 
     
+    // MARK:- VIEW WILL APPEAR
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        if(UserDefaults.standard.bool(forKey: "signOut")){
+            UserDefaults.standard.set(false, forKey: "signOut")
+            UserDefaults.standard.synchronize()
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        
+        
+    }
     
+    // MARK:- VIEW DIDLOAD
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,11 +49,15 @@ class TermConditionsVC: UIViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let profileController = storyBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
         
+        let shipmentVC = storyBoard.instantiateViewController(withIdentifier: "shipmentViewController") as! shipmentViewController
+
+        
+        
         let home = UINavigationController(rootViewController: HomeViewController())
-        let connection = UINavigationController(rootViewController: ConnectionViewController())
+        let shipment = UINavigationController(rootViewController: shipmentVC)
         let message = UINavigationController(rootViewController: MessageViewController())
         let profile =   UINavigationController(rootViewController: profileController)
-        let viewControllers = [home, connection, message, profile]
+        let viewControllers = [home, shipment, message, profile]
         
         return viewControllers
         
