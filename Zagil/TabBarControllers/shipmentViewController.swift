@@ -13,7 +13,7 @@ class shipmentViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         
         print("shipment view will appear called")
-        
+
         super.viewWillAppear(true)
         self.navigationController?.navigationBar.isHidden = true
         self.hidesBottomBarWhenPushed = false
@@ -50,7 +50,7 @@ class shipmentViewController: UIViewController {
 extension shipmentViewController: signOutProtocol{
     
     func signOutFunction(message: String) {
-        print(message)
+//        print(message)
         
         self.dismiss(animated: true, completion: nil)
     }

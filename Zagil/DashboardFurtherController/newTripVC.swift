@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class newTripVC: UIViewController {
 
@@ -59,7 +60,37 @@ class newTripVC: UIViewController {
     }
     @IBAction func postTripHandler(_ sender: Any) {
         print("post trip pressed")
+        
+//        guard let from = fromTextfield.text else {
+//            ToastView.shared.short(self.view, txt_msg: "Please Enter From field")
+//            return
+//        }
+//        guard let to = toTextfield.text else {
+//            ToastView.shared.short(self.view, txt_msg: "Please Enter To field")
+//            return
+//        }
+//        guard let weight = weightTextfield.text else {
+//            ToastView.shared.short(self.view, txt_msg: "Please Enter Weight field")
+//            return
+//        }
+//        guard let size = sizeTextfield.text else {
+//            ToastView.shared.short(self.view, txt_msg: "Please Enter Size field")
+//            return
+//        }
+//        guard let descriptionText = descriptionTextview.text else {
+//            ToastView.shared.short(self.view, txt_msg: "Please Enter Description field")
+//            return
+//        }
+//        guard let price = priceTextfield.text else {
+//            ToastView.shared.short(self.view, txt_msg: "Please Enter Price field")
+//            return
+//        }
+        
+        self.postTripData(fromCountry: "pakistan", toCountry: "Canada", date: "26/08/2019", weight: "2.5kg", size: "30cm", descriptionText: "I have added new trip", price: "30$")
+        
     }
+    
+    
     @IBAction func selectDateHandler(_ sender: Any) {
         print("select date pressed")
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -69,6 +100,67 @@ class newTripVC: UIViewController {
         // calendarPopOverVC
         
     }
+    
+    // MARK:- POST TRIP API FUNCTION
+    
+    private func postTripData(fromCountry: String, toCountry: String, date: String, weight: String, size: String, descriptionText: String, price: String) {
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true);
+        guard AppUtil.isInternetConnected() == true else {
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.showAlertView(titleStr: "No internet Connection", messageStr: "")
+            return
+        }
+        
+//        guard let userID = UserModel.userInstance.uid else {return}
+        
+        var baseUrl =  AppUtil.getBaseUrl()
+        baseUrl = baseUrl.appending("/api/v1/trip/addTrip")
+        
+        print(baseUrl)
+        
+        
+        let parameter = ["uid" : 6,
+                         "destination" : toCountry,
+                         "weight" : weight,
+                         "size" : size,
+                         "date" : date,
+                         "description" : descriptionText,
+                         "prize" : price,
+                         "source" : fromCountry] as [String : Any]
+        
+        APIManager.postAPIRequest(baseUrl, parameter: parameter , dataResponse: { (dataResponse) in
+            if dataResponse.response?.statusCode == 200
+            {
+                let mainResponse =  dataResponse.result.value
+                if (mainResponse is [Any])
+                {
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    let array = mainResponse as! NSArray
+                    let mainDict = array[0] as! NSDictionary
+                    //                    let userid = mainDict.value(forKey: "id") as! Int
+                    
+                    
+                    ToastView.shared.short(self.view, txt_msg: "New Trip Has Been Added")
+//                    self.navigationController?.popViewController(animated: true)
+                    
+                }
+                else if (mainResponse is [AnyHashable : Any])
+                {
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                }
+                
+            } // if
+            else
+            {
+            }
+            
+        }) { (error) -> Void in
+            
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.showAlertView(titleStr: "No Response Received", messageStr: "")
+        }
+    } // end method
 
 }
 

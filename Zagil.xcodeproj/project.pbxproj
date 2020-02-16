@@ -13,15 +13,18 @@
 		1840C80623C1FDF0004BA0DB /* signInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840C80523C1FDF0004BA0DB /* signInViewController.swift */; };
 		1840C80923C20282004BA0DB /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1840C80823C20282004BA0DB /* ToastView.swift */; };
 		1841028E23C4F5B200D19755 /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1841028D23C4F5B200D19755 /* credentials.plist */; };
+		184D92A823E156BE0098B0F8 /* googleUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184D92A723E156BE0098B0F8 /* googleUser.swift */; };
 		1853761923D09FCB001691A6 /* tripFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853761823D09FCB001691A6 /* tripFeedVC.swift */; };
 		1853761B23D0B409001691A6 /* mapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1853761A23D0B409001691A6 /* mapsViewController.swift */; };
 		1855942D23B767A3008012BE /* ooredoo-Regular_gdi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1855942C23B767A3008012BE /* ooredoo-Regular_gdi.ttf */; };
 		1855942F23B767AC008012BE /* ooredoo-Bold_gdi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1855942E23B767AC008012BE /* ooredoo-Bold_gdi.ttf */; };
 		1855943223B7790C008012BE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855943123B7790C008012BE /* SettingsViewController.swift */; };
+		185A85A923DB1F2D00F59EE1 /* tripFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A85A823DB1F2D00F59EE1 /* tripFeedModel.swift */; };
 		1897137D23B4CF16003320F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897137C23B4CF16003320F8 /* AppDelegate.swift */; };
 		1897138423B4CF16003320F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1897138223B4CF16003320F8 /* Main.storyboard */; };
 		1897138623B4CF1A003320F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1897138523B4CF1A003320F8 /* Assets.xcassets */; };
 		1897138923B4CF1A003320F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1897138723B4CF1A003320F8 /* LaunchScreen.storyboard */; };
+		189B1A8823D9F083008C12BA /* tripFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189B1A8723D9F083008C12BA /* tripFeedCell.swift */; };
 		18A8274A23D1EA3400F28BAA /* TextFieldDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8274923D1EA3400F28BAA /* TextFieldDesignable.swift */; };
 		18A8274C23D1F3A800F28BAA /* TextViewDesignables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8274B23D1F3A800F28BAA /* TextViewDesignables.swift */; };
 		18A8274E23D1F66A00F28BAA /* newTripVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A8274D23D1F66A00F28BAA /* newTripVC.swift */; };
@@ -50,17 +53,20 @@
 		1840C80523C1FDF0004BA0DB /* signInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInViewController.swift; sourceTree = "<group>"; };
 		1840C80823C20282004BA0DB /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		1841028D23C4F5B200D19755 /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		184D92A723E156BE0098B0F8 /* googleUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = googleUser.swift; sourceTree = "<group>"; };
 		1853761823D09FCB001691A6 /* tripFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripFeedVC.swift; sourceTree = "<group>"; };
 		1853761A23D0B409001691A6 /* mapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapsViewController.swift; sourceTree = "<group>"; };
 		1855942C23B767A3008012BE /* ooredoo-Regular_gdi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ooredoo-Regular_gdi.ttf"; sourceTree = "<group>"; };
 		1855942E23B767AC008012BE /* ooredoo-Bold_gdi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ooredoo-Bold_gdi.ttf"; sourceTree = "<group>"; };
 		1855943123B7790C008012BE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		185A85A823DB1F2D00F59EE1 /* tripFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripFeedModel.swift; sourceTree = "<group>"; };
 		1897137923B4CF16003320F8 /* Zagil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zagil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1897137C23B4CF16003320F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1897138323B4CF16003320F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1897138523B4CF1A003320F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1897138823B4CF1A003320F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1897138A23B4CF1A003320F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		189B1A8723D9F083008C12BA /* tripFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripFeedCell.swift; sourceTree = "<group>"; };
 		18A8274923D1EA3400F28BAA /* TextFieldDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDesignable.swift; sourceTree = "<group>"; };
 		18A8274B23D1F3A800F28BAA /* TextViewDesignables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewDesignables.swift; sourceTree = "<group>"; };
 		18A8274D23D1F66A00F28BAA /* newTripVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTripVC.swift; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				1853761823D09FCB001691A6 /* tripFeedVC.swift */,
+				189B1A8723D9F083008C12BA /* tripFeedCell.swift */,
 				1853761A23D0B409001691A6 /* mapsViewController.swift */,
 				18A8274D23D1F66A00F28BAA /* newTripVC.swift */,
 				18A8274F23D200C800F28BAA /* calendarPopOverVC.swift */,
@@ -160,10 +167,10 @@
 		1897137B23B4CF16003320F8 /* Zagil */ = {
 			isa = PBXGroup;
 			children = (
+				1855942B23B76797008012BE /* fonts */,
 				18A8275123D21F0100F28BAA /* Model */,
 				1840C80723C2025C004BA0DB /* Utilities */,
 				18D80C2023C1F61000DE458D /* SignUP&SignINcontroller */,
-				1855942B23B76797008012BE /* fonts */,
 				18B0634123B6208C001B6F29 /* TabBarControllers */,
 				1855943023B778EF008012BE /* ShipmentControllers */,
 				1853761723D09FA6001691A6 /* DashboardFurtherController */,
@@ -183,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				18A8275223D21F0F00F28BAA /* UserModel */,
+				185A85A823DB1F2D00F59EE1 /* tripFeedModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				18A8275323D21F5800F28BAA /* UserModel.swift */,
+				184D92A723E156BE0098B0F8 /* googleUser.swift */,
 			);
 			path = UserModel;
 			sourceTree = "<group>";
@@ -432,8 +441,11 @@
 				18A8274A23D1EA3400F28BAA /* TextFieldDesignable.swift in Sources */,
 				1897137D23B4CF16003320F8 /* AppDelegate.swift in Sources */,
 				1853761923D09FCB001691A6 /* tripFeedVC.swift in Sources */,
+				184D92A823E156BE0098B0F8 /* googleUser.swift in Sources */,
 				1840C80923C20282004BA0DB /* ToastView.swift in Sources */,
+				189B1A8823D9F083008C12BA /* tripFeedCell.swift in Sources */,
 				18A8274C23D1F3A800F28BAA /* TextViewDesignables.swift in Sources */,
+				185A85A923DB1F2D00F59EE1 /* tripFeedModel.swift in Sources */,
 				18B0634D23B62134001B6F29 /* shipmentViewController.swift in Sources */,
 				18B0634B23B62134001B6F29 /* ProfileViewController.swift in Sources */,
 				18B0635323B626E2001B6F29 /* TermConditionsVC.swift in Sources */,

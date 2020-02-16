@@ -27,6 +27,7 @@ class signInViewController: UIViewController, GIDSignInDelegate {
         super.viewWillAppear(true)
         
         self.navigationController?.isNavigationBarHidden = true
+        
     }
 
     override func viewDidLoad() {
@@ -58,11 +59,6 @@ class signInViewController: UIViewController, GIDSignInDelegate {
     
     @IBAction func loginTapped(_ sender: Any) {
         
-        if(self.tickCheck){
-            UserDefaults.standard.set(true, forKey: "isRemembered")
-            UserDefaults.standard.synchronize()
-        }
-        
          if(emailTextfield.text == ""){
              ToastView.shared.short(self.view, txt_msg: "Email Textfield is empty")
          }else if(passwordTextfield.text == ""){
@@ -91,16 +87,30 @@ class signInViewController: UIViewController, GIDSignInDelegate {
         
         let loginManager = LoginManager()
         loginManager.logIn(permissions: ["public_profile", "email"], from: self) { (result, error) in
-          if let error = error {
-            print("Failed to login: \(error.localizedDescription)")
-            return
-          }
+            if let error = error {
+                print("Failed to login: \(error.localizedDescription)")
+                return
+            }
             guard let accessToken = AccessToken.current else {
-            print("Failed to get access token")
-            return
-          }
+                print("Failed to get access token")
+                return
+            }
             
+            GraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, email"]).start(completionHandler: { (connection, result, error) -> Void in
+                if (error == nil){
+                    let fbDetails = result as! NSDictionary
+                    let fbEmail = fbDetails.value(forKey: "email") as! String
+                    let fbName = fbDetails.value(forKey: "name") as! String
+                    let fbUserID = fbDetails.value(forKey: "id") as! String
+                    
+                    print(fbEmail, fbName, fbUserID)
+                    self.checkingEmailExistsOrNot(name: fbName, email: "muneeb_ahsan07@gmail.com", id: fbUserID, from: "facebook")
 
+                }else{
+                    print(error?.localizedDescription ?? "Not found")
+                }
+            })
+            
         }
         
     }
@@ -136,6 +146,19 @@ class signInViewController: UIViewController, GIDSignInDelegate {
         if error != nil {
             print(error.debugDescription)
         }else{
+            
+            googleUser.userInstance.userid = user.userID
+            googleUser.userInstance.fullname = user.profile.name
+            googleUser.userInstance.email = user.profile.email
+            if user.profile.hasImage {
+                if let pic = user.profile.imageURL(withDimension: 100){
+                    googleUser.userInstance.image = pic
+                }
+            }else{
+                print("image not found")
+            }
+            
+            
             
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let controller = storyBoard.instantiateViewController(withIdentifier: "TermConditionsVC") as! TermConditionsVC
@@ -188,14 +211,44 @@ extension signInViewController {
                     UserModel.userInstance.username = mainDict.value(forKey: "username") as? String
                     UserModel.userInstance.birthday = mainDict.value(forKey: "birthday") as? String
                     UserModel.userInstance.address = mainDict.value(forKey: "address") as? String
-                    UserModel.userInstance.anotherId = mainDict.value(forKey: "another_id") as? String
+                    UserModel.userInstance.FId = mainDict.value(forKey: "f_id") as? String
                     UserModel.userInstance.feedback = mainDict.value(forKey: "feedback") as? String
+                    UserModel.userInstance.GId = mainDict.value(forKey: "g_id") as? String
                     
+                    // tick is checked
+                    if(self.tickCheck){
+                        let preferences = UserDefaults.standard
+                        preferences.set(true, forKey: "isRemembered")
+                        
+                        preferences.set(UserModel.userInstance.userid, forKey: "userid")
+                        preferences.set(UserModel.userInstance.email, forKey: "email")
+                        preferences.set(UserModel.userInstance.password, forKey: "password")
+                        preferences.set(UserModel.userInstance.phone, forKey: "phone")
+                        preferences.set(UserModel.userInstance.image, forKey: "image")
+                        preferences.set(UserModel.userInstance.name, forKey: "name")
+                        preferences.set(UserModel.userInstance.uid, forKey: "uid")
+                        preferences.set(UserModel.userInstance.username, forKey: "username")
+                        preferences.set(UserModel.userInstance.birthday, forKey: "birthday")
+                        preferences.set(UserModel.userInstance.address, forKey: "address")
+                        preferences.set(UserModel.userInstance.FId, forKey: "f_id")
+                        preferences.set(UserModel.userInstance.feedback, forKey: "feedback")
+                        preferences.set(UserModel.userInstance.GId, forKey: "g_id")
+                        
+                        preferences.synchronize()
+                        
+                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller = storyBoard.instantiateViewController(withIdentifier: "TermConditionsVC") as! TermConditionsVC
+                        controller.modalPresentationStyle = .fullScreen
+                        self.navigationController?.pushViewController(controller, animated: true)
+                        
+                    }else{
+                        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                        let controller = storyBoard.instantiateViewController(withIdentifier: "TermConditionsVC") as! TermConditionsVC
+                        controller.modalPresentationStyle = .fullScreen
+                        self.navigationController?.pushViewController(controller, animated: true)
+                    }
                     
-                    let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let controller = storyBoard.instantiateViewController(withIdentifier: "TermConditionsVC") as! TermConditionsVC
-                    controller.modalPresentationStyle = .fullScreen
-                    self.navigationController?.pushViewController(controller, animated: true)
+
                     
                     
                 }
@@ -227,6 +280,240 @@ extension signInViewController: LoginButtonDelegate{
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
         print("logout success")
     }
+    
+    
+}
+
+extension UIImageView {
+    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() {
+                self.image = image
+            }
+        }.resume()
+    }
+    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
+        guard let url = URL(string: link) else { return }
+        downloaded(from: url, contentMode: mode)
+    }
+}
+
+    // ===========================================================================================
+    // ======================================= EXTENSIONS ========================================
+    // ===========================================================================================
+
+
+extension signInViewController{
+    
+    // MARK:- CHECK EMAIL EXISTS OR NOT
+    
+    private func checkingEmailExistsOrNot(name: String, email: String, id: String, from: String) {
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true);
+        guard AppUtil.isInternetConnected() == true else {
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.showAlertView(titleStr: "No internet Connection", messageStr: "")
+            return
+        }
+        
+        var baseUrl =  AppUtil.getBaseUrl()
+        baseUrl = baseUrl.appending("/api/v1/user/emailCheck")
+        
+        
+        let parameter = ["email" : email] as [String : Any]
+        
+        APIManager.getAPIRequest123(baseUrl, parameter: parameter , dataResponse: { (dataResponse) in
+            if dataResponse.response?.statusCode == 200
+            {
+                let mainResponse =  dataResponse.result.value
+                if (mainResponse is [Any])
+                {
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    let array = mainResponse as! NSArray
+                    let mainDict = array[0] as! NSDictionary
+                    let count = mainDict.value(forKey: "number") as! Int
+                    
+                    if(count == 0){
+                        print("email not exists you may update social media data")
+                        
+                        self.updateGoogleOrFacebookData(name: name, email: email, userId: id, requestFrom: from)
+        
+                        
+                    }else{
+                        print("entered email already exists")
+                        
+                        if(from == "facebook"){
+                            self.updateFacebookID(id: id, email: email)
+                        }else{
+                            self.updateGoogleID(id: id, email: email)
+                        }
+                    }
+                    
+                }
+                else if (mainResponse is [AnyHashable : Any])
+                {
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                }
+                
+            } // if
+            else
+            {
+            }
+            
+        }) { (error) -> Void in
+            
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.showAlertView(titleStr: "No Response Received", messageStr: "")
+        }
+    } // end method
+    
+    
+    // MARK:- UPDATE SOCIAL MEDIA DATA
+    
+    private func updateGoogleOrFacebookData(name: String, email: String, userId: String, requestFrom: String) {
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true);
+        guard AppUtil.isInternetConnected() == true else {
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.showAlertView(titleStr: "No internet Connection", messageStr: "")
+            return
+        }
+        
+        var baseUrl =  AppUtil.getBaseUrl()
+        baseUrl = baseUrl.appending("/api/v1/user/loginWithGoogle")
+        
+        let parameter = ["name" : name,
+                         "email" : email,
+                         "id" : userId,
+                         "requestFrom" : requestFrom] as [String : Any]
+        
+        APIManager.postAPIRequest(baseUrl, parameter: parameter , dataResponse: { (dataResponse) in
+            if dataResponse.response?.statusCode == 200
+            {
+                let mainResponse =  dataResponse.result.value
+                if (mainResponse is [Any])
+                {
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    let array = mainResponse as! NSArray
+                    let mainDict = array[0] as! NSDictionary
+                    print("response from updateSocial media api: \(mainDict)")
+                    
+                }
+                else if (mainResponse is [AnyHashable : Any])
+                {
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                }
+                
+            } // if
+            else
+            {
+            }
+            
+        }) { (error) -> Void in
+            
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.showAlertView(titleStr: "No Response Received", messageStr: "")
+        }
+    } // end method
+    
+    // MARK:- UPDATE FACEBOOK ID
+    
+    private func updateFacebookID(id: String, email: String) {
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true);
+        guard AppUtil.isInternetConnected() == true else {
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.showAlertView(titleStr: "No internet Connection", messageStr: "")
+            return
+        }
+        
+        var baseUrl =  AppUtil.getBaseUrl()
+        baseUrl = baseUrl.appending("/api/v1/user/updateIDFacebook")
+        
+        let parameter = ["email" : email,
+                         "id" : id] as [String : Any]
+        
+        APIManager.postAPIRequest(baseUrl, parameter: parameter , dataResponse: { (dataResponse) in
+            if dataResponse.response?.statusCode == 200
+            {
+                let mainResponse =  dataResponse.result.value
+                if (mainResponse is [Any])
+                {
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    let array = mainResponse as! NSArray
+                    let mainDict = array[0] as! NSDictionary
+                    print("response from update facebook id api: \(mainDict)")
+                    
+                }
+                else if (mainResponse is [AnyHashable : Any])
+                {
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                }
+                
+            } // if
+            else
+            {
+            }
+            
+        }) { (error) -> Void in
+            
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.showAlertView(titleStr: "No Response Received", messageStr: "")
+        }
+    } // end method
+    
+    // MARK:- UPDATE GOOGLE ID
+    
+    private func updateGoogleID(id: String, email: String) {
+        
+        MBProgressHUD.showAdded(to: self.view, animated: true);
+        guard AppUtil.isInternetConnected() == true else {
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.showAlertView(titleStr: "No internet Connection", messageStr: "")
+            return
+        }
+        
+        var baseUrl =  AppUtil.getBaseUrl()
+        baseUrl = baseUrl.appending("/api/v1/user/updateIDGoogle")
+        
+        let parameter = ["email" : email,
+                         "id" : id] as [String : Any]
+        
+        APIManager.postAPIRequest(baseUrl, parameter: parameter , dataResponse: { (dataResponse) in
+            if dataResponse.response?.statusCode == 200
+            {
+                let mainResponse =  dataResponse.result.value
+                if (mainResponse is [Any])
+                {
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    let array = mainResponse as! NSArray
+                    let mainDict = array[0] as! NSDictionary
+                    print("response from update Google id api: \(mainDict)")
+                    
+                }
+                else if (mainResponse is [AnyHashable : Any])
+                {
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                }
+                
+            } // if
+            else
+            {
+            }
+            
+        }) { (error) -> Void in
+            
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.showAlertView(titleStr: "No Response Received", messageStr: "")
+        }
+    } // end method
     
     
 }

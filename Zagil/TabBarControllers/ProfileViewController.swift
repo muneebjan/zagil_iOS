@@ -30,12 +30,37 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        self.view.backgroundColor = UIColor.green
-
+        self.setupView()
+        
     }
     override func viewWillLayoutSubviews() {
       super.viewWillLayoutSubviews()
         self.profileImage.layer.cornerRadius = self.profileImage.frame.height / 2.0
+    }
+    
+    // MARK:- SETUP VIEWS
+    
+    func setupView() {
+        
+        if(googleUser.userInstance.userid != nil){ // google signin activated
+            print("google user exist")
+            self.userName.text = googleUser.userInstance.fullname!
+            self.emailTextfield.text = googleUser.userInstance.email!
+            self.emailTextfield.isEnabled = false
+            self.profileImage.downloaded(from: googleUser.userInstance.image!)
+            self.dobTextfield.text = ""
+            
+        }else{
+            print("local user exist")
+            self.userName.text = UserModel.userInstance.username
+            self.dobTextfield.text = UserModel.userInstance.birthday
+            self.addressTextfield.text = UserModel.userInstance.address
+            self.cellPhoneTextfield.text = UserModel.userInstance.phone
+            self.emailTextfield.text = UserModel.userInstance.email
+            self.emailTextfield.isEnabled = false
+        }
+        
+
     }
     
     // MARK:- IB ACTIONS
@@ -45,14 +70,32 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
             print("Button capture")
 
             imagePicker.delegate = self
-            imagePicker.sourceType = .savedPhotosAlbum
             imagePicker.allowsEditing = false
-
-            present(imagePicker, animated: true, completion: nil)
+            
+            let alert = UIAlertController(title: "Choose one of the following:", message: "", preferredStyle: .actionSheet)
+            
+            alert.addAction(UIAlertAction(title: "Gallery", style: .default, handler: { (action) in
+                
+                self.imagePicker.sourceType = .savedPhotosAlbum
+                self.present(self.imagePicker, animated: true, completion: nil)
+                
+            }))
+            alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (action) in
+                
+                self.imagePicker.sourceType = .camera
+                self.present(self.imagePicker, animated: true, completion: nil)
+                
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
         }
         
     }
+    
+    
+    // MARK:- AGREE HANDLER
     @IBAction func agreeHandler(_ sender: Any) {
+        
     }
     
 

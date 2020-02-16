@@ -32,6 +32,9 @@ class dashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let firstname = UserModel.userInstance.name!
+//        print(firstname)
+        
         self.senderButton.setImage(UIImage(named: "senderUnselected"), for: .normal)
         self.senderButton.setImage(UIImage(named: "senderSelected"), for: .selected)
         

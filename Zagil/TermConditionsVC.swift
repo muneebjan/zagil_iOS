@@ -16,11 +16,25 @@ class TermConditionsVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        if(UserDefaults.standard.bool(forKey: "signOut")){
-            UserDefaults.standard.set(false, forKey: "signOut")
-            UserDefaults.standard.synchronize()
-            self.navigationController?.popToRootViewController(animated: true)
+        if(UserDefaults.standard.bool(forKey: "isRemembered")){
+            print("isRemember = true")
+//            if(UserDefaults.standard.bool(forKey: "signOut")){
+//                UserDefaults.standard.set(false, forKey: "signOut")
+//                UserDefaults.standard.synchronize()
+//                self.navigationController?.popToRootViewController(animated: true)
+//            }
+        }else{
+            if(UserDefaults.standard.bool(forKey: "signOut")){
+                UserDefaults.standard.set(false, forKey: "signOut")
+                UserDefaults.standard.synchronize()
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+            else{
+                print("signOut is False")
+            }
         }
+        
+
         
         
     }
@@ -29,7 +43,8 @@ class TermConditionsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view
+        
     }
     
     @IBAction func agreeButton(_ sender: Any) {

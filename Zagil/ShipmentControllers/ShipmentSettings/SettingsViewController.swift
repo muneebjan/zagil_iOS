@@ -44,7 +44,13 @@ class SettingsViewController: UIViewController {
         let alertController = UIAlertController(title: "Signing Out?", message: "Are you sure to Sign Out", preferredStyle: .alert)
                 
         let action1 = UIAlertAction(title: "Sign Out", style: .default) { (action:UIAlertAction) in
-            print("signing out process");
+            print("signing out process")
+            
+            UserDefaults.standard.set(false, forKey: "isRemembered")
+            UserDefaults.standard.set(true, forKey: "signOut")
+            UserDefaults.standard.synchronize()
+            self.signOutDelegate.signOutFunction(message: "Signing OUT")
+            self.navigationController?.popToRootViewController(animated: true)
         }
 
         let action2 = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction) in
@@ -77,14 +83,9 @@ class SettingsViewController: UIViewController {
     }
     @IBAction func signOutButton(_ sender: Any) {
         print("signout pressed")
-        
-        UserDefaults.standard.set(true, forKey: "signOut")
-        UserDefaults.standard.synchronize()
-        self.signOutDelegate.signOutFunction(message: "Signing OUT")
-        self.navigationController?.popToRootViewController(animated: true)
 
 //        GIDSignIn.sharedInstance()?.signOut()
-//        self.signOutAlertFunc()
+        self.signOutAlertFunc()
     }
     
     @IBAction func backButton(_ sender: Any) {

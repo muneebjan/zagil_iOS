@@ -12,6 +12,8 @@ class UserModel: NSObject {
 
     static let userInstance = UserModel()
     
+    var userArray = [UserModel]()
+    
     var userid: Int?
     var email: String?
     var password: String?
@@ -22,7 +24,8 @@ class UserModel: NSObject {
     var username: String?
     var birthday: String?
     var address: String?
-    var anotherId: String?
+    var FId: String?
     var feedback: String?
+    var GId: String?
     
 }

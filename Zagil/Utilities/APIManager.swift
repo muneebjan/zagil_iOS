@@ -40,6 +40,37 @@ class APIManager: NSObject {
         }
     } // end Method
     
+    
+    // MARK: - Get  data Respons Request
+    class func getAPIRequest123(_ urlStr : String, parameter : Parameters?, dataResponse:@escaping(DataResponse<Any>) -> Void, failure:@escaping (Error) -> Void)
+    {
+        let defaultt  = UserDefaults.standard
+        let accessToken =  defaultt.value(forKey: "access_token") as? String
+        var tokenValueStr =  "Bearer" + " "//.appending(accessToken)
+        if accessToken != nil {
+            tokenValueStr = tokenValueStr.appending(accessToken!)
+        }
+        let header : HTTPHeaders = ["Authorization" : tokenValueStr]
+        
+        Alamofire.request(urlStr, method: .get, parameters: parameter, encoding: URLEncoding.queryString, headers: nil).responseJSON { (response:DataResponse<Any>) in
+            switch(response.result) {
+            case .success(_):
+                if response.result.value
+                    != nil
+                {
+                    //let resJson = (response.result.value!)
+                    dataResponse(response as Any as! DataResponse<Any>)
+                }
+                break
+            case .failure(_):
+                let error : Error =  response.result.error!
+                failure(error)
+                break
+            } // switch End
+        }
+    } // end Method
+    
+    
     // MARK: -  Post Api Requesttt
     class func postAPIRequest(_ url : String, parameter : Parameters,dataResponse:@escaping(DataResponse<Any>) -> Void, failure:@escaping (Error) -> Void)
         

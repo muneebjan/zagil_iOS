@@ -111,15 +111,16 @@ extension signUpViewController {
                     MBProgressHUD.hide(for: self.view, animated: true)
                     let array = mainResponse as! NSArray
                     let mainDict = array[0] as! NSDictionary
-                    let count = mainDict.value(forKey: "count") as! Int
+                    let count = mainDict.value(forKey: "number") as! Int
                     
-                    if(count < 1){
-                        print("entered email already exists")
-                    }else{
+                    if(count == 0){
                         print("email not exists you may sign up")
                         // calling sign up api
                         self.signUpFunction(name: name, password: password, email: email)
+                    }else{
+                        print("entered email already exists")
                     }
+                    
                     
                 }
                 else if (mainResponse is [AnyHashable : Any])
