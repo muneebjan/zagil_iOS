@@ -99,6 +99,12 @@ class dashboardVC: UIViewController {
                 
             }else if(travelButton.isSelected){
                 print("travel button is selected")
+                
+                let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let dashboardvc = storyBoard.instantiateViewController(withIdentifier: "shipmentFeedVC") as! shipmentFeedVC
+                dashboardvc.hidesBottomBarWhenPushed = true
+                cyl_push(dashboardvc, animated: true)
+                
             }else{
                 print("here i am")
             }

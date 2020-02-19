@@ -20,6 +20,7 @@
 		1855942F23B767AC008012BE /* ooredoo-Bold_gdi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1855942E23B767AC008012BE /* ooredoo-Bold_gdi.ttf */; };
 		1855943223B7790C008012BE /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1855943123B7790C008012BE /* SettingsViewController.swift */; };
 		185A85A923DB1F2D00F59EE1 /* tripFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185A85A823DB1F2D00F59EE1 /* tripFeedModel.swift */; };
+		187DAE5B23FC8827000D86B2 /* shipmentFeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187DAE5A23FC8827000D86B2 /* shipmentFeedVC.swift */; };
 		1897137D23B4CF16003320F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1897137C23B4CF16003320F8 /* AppDelegate.swift */; };
 		1897138423B4CF16003320F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1897138223B4CF16003320F8 /* Main.storyboard */; };
 		1897138623B4CF1A003320F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1897138523B4CF1A003320F8 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		18EE9B0423B8C54300564E16 /* Dtrips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EE9B0323B8C54300564E16 /* Dtrips.storyboard */; };
 		18EE9B0623B8C55500564E16 /* Dactivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EE9B0523B8C55500564E16 /* Dactivity.storyboard */; };
 		18EE9B0823B8C56100564E16 /* Dsetting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EE9B0723B8C56100564E16 /* Dsetting.storyboard */; };
+		18F1336F23FDDC6C0037D937 /* newShipmentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F1336E23FDDC6C0037D937 /* newShipmentVC.swift */; };
 		B8DF0C466CECE5A55F550D52 /* Pods_Zagil.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C143DE91B3522871207F93 /* Pods_Zagil.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +62,7 @@
 		1855942E23B767AC008012BE /* ooredoo-Bold_gdi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ooredoo-Bold_gdi.ttf"; sourceTree = "<group>"; };
 		1855943123B7790C008012BE /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		185A85A823DB1F2D00F59EE1 /* tripFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tripFeedModel.swift; sourceTree = "<group>"; };
+		187DAE5A23FC8827000D86B2 /* shipmentFeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shipmentFeedVC.swift; sourceTree = "<group>"; };
 		1897137923B4CF16003320F8 /* Zagil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zagil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1897137C23B4CF16003320F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1897138323B4CF16003320F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 		18EE9B0323B8C54300564E16 /* Dtrips.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dtrips.storyboard; sourceTree = "<group>"; };
 		18EE9B0523B8C55500564E16 /* Dactivity.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dactivity.storyboard; sourceTree = "<group>"; };
 		18EE9B0723B8C56100564E16 /* Dsetting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dsetting.storyboard; sourceTree = "<group>"; };
+		18F1336E23FDDC6C0037D937 /* newShipmentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newShipmentVC.swift; sourceTree = "<group>"; };
 		39E003688AD5EB0BFC0E46EF /* Pods-Zagil.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zagil.release.xcconfig"; path = "Target Support Files/Pods-Zagil/Pods-Zagil.release.xcconfig"; sourceTree = "<group>"; };
 		75C143DE91B3522871207F93 /* Pods_Zagil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zagil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E91BC30BDA6615AE73032539 /* Pods-Zagil.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zagil.debug.xcconfig"; path = "Target Support Files/Pods-Zagil/Pods-Zagil.debug.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 				1853761A23D0B409001691A6 /* mapsViewController.swift */,
 				18A8274D23D1F66A00F28BAA /* newTripVC.swift */,
 				18A8274F23D200C800F28BAA /* calendarPopOverVC.swift */,
+				187DAE5A23FC8827000D86B2 /* shipmentFeedVC.swift */,
+				18F1336E23FDDC6C0037D937 /* newShipmentVC.swift */,
 			);
 			path = DashboardFurtherController;
 			sourceTree = "<group>";
@@ -439,6 +445,7 @@
 				1855943223B7790C008012BE /* SettingsViewController.swift in Sources */,
 				18B0634F23B62134001B6F29 /* MessageViewController.swift in Sources */,
 				18A8274A23D1EA3400F28BAA /* TextFieldDesignable.swift in Sources */,
+				187DAE5B23FC8827000D86B2 /* shipmentFeedVC.swift in Sources */,
 				1897137D23B4CF16003320F8 /* AppDelegate.swift in Sources */,
 				1853761923D09FCB001691A6 /* tripFeedVC.swift in Sources */,
 				184D92A823E156BE0098B0F8 /* googleUser.swift in Sources */,
@@ -446,6 +453,7 @@
 				189B1A8823D9F083008C12BA /* tripFeedCell.swift in Sources */,
 				18A8274C23D1F3A800F28BAA /* TextViewDesignables.swift in Sources */,
 				185A85A923DB1F2D00F59EE1 /* tripFeedModel.swift in Sources */,
+				18F1336F23FDDC6C0037D937 /* newShipmentVC.swift in Sources */,
 				18B0634D23B62134001B6F29 /* shipmentViewController.swift in Sources */,
 				18B0634B23B62134001B6F29 /* ProfileViewController.swift in Sources */,
 				18B0635323B626E2001B6F29 /* TermConditionsVC.swift in Sources */,
